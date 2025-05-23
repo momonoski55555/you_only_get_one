@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://oaetkvpfj1vp"]
+[gd_scene load_steps=7 format=3 uid="uid://oaetkvpfj1vp"]
 
+[ext_resource type="Texture2D" uid="uid://1ytd8vnlmgd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_56xro"]
 [ext_resource type="PackedScene" uid="uid://bbni3ss1tocfx" path="res://scences/player/player.tscn" id="1_hkbve"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdo6y"]
+albedo_texture = ExtResource("1_56xro")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hkbve"]
 
@@ -11,9 +15,10 @@ sky_material = SubResource("ProceduralSkyMaterial_hkbve")
 background_mode = 2
 sky = SubResource("Sky_56xro")
 
-[node name="Node3D" type="Node3D"]
+[node name="Main" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_xdo6y")
 use_collision = true
 size = Vector3(100, 1, 100)
 
