@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbni3ss1tocfx"]
+
+[ext_resource type="Script" uid="uid://gbvuoal04u40" path="res://scences/player/player.gd" id="1_i0nm0"]
+[ext_resource type="Script" uid="uid://b2xdjgjra08yb" path="res://scences/player/gimble.gd" id="2_3k8nl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3k8nl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_637lg"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_i0nm0")
+
+[node name="Gimble" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_3k8nl")
+
+[node name="Camera" type="Camera3D" parent="Gimble"]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_3k8nl")
+skeleton = NodePath("../Gimble")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_637lg")
