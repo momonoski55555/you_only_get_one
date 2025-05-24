@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://sevo3jnqnlki"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ewgcrt7t3ge"]
 
 [ext_resource type="Script" uid="uid://csi6bpfj8qei0" path="res://node_3d.gd" id="1_a202f"]
-[ext_resource type="PackedScene" uid="uid://cailpqsca4dw7" path="res://nigger.tscn" id="2_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://767vwsysvmjd" path="res://nigger.tscn" id="2_a0tk4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
 
