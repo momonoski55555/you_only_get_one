@@ -16,7 +16,7 @@ script = ExtResource("2_3k8nl")
 
 [node name="Camera" type="Camera3D" parent="Gimble"]
 
-[node name="point" type="Node3D" parent="Gimble"]
+[node name="point" type="Node3D" parent="Gimble/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.15607)
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]

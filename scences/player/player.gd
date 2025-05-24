@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-@onready var point: Node3D = $Gimble/point
+@onready var point: Node3D = $Gimble/Camera/point
 const PLAYER_BULLET = preload("res://scences/player/player_bullet.tscn")
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -9,22 +9,20 @@ const JUMP_VELOCITY = 4.5
 
 var bullets: int = 1
 
-func _ready() -> void:
-	
+func _ready() -> void:	
 	clamp(bullets,0,1)
-
-
-func collision():
-	print("yes a hit")
 
 
 func _input(event: InputEvent) -> void:
 	var bullet = PLAYER_BULLET.instantiate()
 	if Input.is_action_just_released("Fire"):
-		point.add_child(bullet)
-		bullet.top_level = true
-	
-	
+		if bullets > 0:
+			bullets -= 1
+			point.add_child(bullet)
+			bullet.top_level = true
+
+func add_bullet() -> void: 
+	bullets += 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
