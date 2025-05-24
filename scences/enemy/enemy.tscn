@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://dtmyypm08l711"]
+[gd_scene load_steps=6 format=3 uid="uid://dtmyypm08l711"]
+
+[ext_resource type="Script" uid="uid://bnvkqdirne1ke" path="res://scences/enemy/enemy.gd" id="1_o6gs2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pck21"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_23vxx"]
+size = Vector3(1, 0.5, 0.25)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o6gs2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o6gs2"]
+radius = 8.92991
 
 [node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_o6gs2")
+
+[node name="Look_at" type="Marker3D" parent="."]
+transform = Transform3D(0.977958, 0, 0, 0, 0.977958, 0, 0, 0, 0.977958, 2.08189e-12, 0.5, 2.08189e-12)
+gizmo_extents = 3.33
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_pck21")
+
+[node name="Gimble" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08189e-12, 0.5, 2.08189e-12)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Gimble"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08189e-12, 2.08189e-12, -0.5)
+mesh = SubResource("BoxMesh_23vxx")
+
+[node name="RayCast3D" type="RayCast3D" parent="Gimble"]
+target_position = Vector3(2.08189e-12, 2.08189e-12, -10)
+debug_shape_custom_color = Color(0, 0.849889, 0.849889, 1)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_o6gs2")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_o6gs2")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

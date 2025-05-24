@@ -10,3 +10,4 @@ func  _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x * Sens))
 		$Camera.rotation.x += deg_to_rad(-event.relative.y * Sens)
 		$Camera.rotation.x = clamp($Camera.rotation.x , deg_to_rad(-89), deg_to_rad(89))
+	

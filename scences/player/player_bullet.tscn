@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl67q5gjuglt7"]
+
+[ext_resource type="Script" uid="uid://cmqnh67i372mg" path="res://scences/player/player_bullet.gd" id="1_4kyfy"]
+[ext_resource type="PackedScene" uid="uid://duu25bpq4d0ig" path="res://scences/projectile/projectile_mesh.glb" id="1_wxqkn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kyfy"]
+radius = 0.412819
+height = 1.74012
+
+[node name="player_bullet" type="RigidBody3D"]
+script = ExtResource("1_4kyfy")
+
+[node name="projectile_mesh" parent="." instance=ExtResource("1_wxqkn")]
+transform = Transform3D(-2.54618e-08, 2.03168e-16, 0.582499, 2.03168e-16, 0.582499, -2.03168e-16, -0.582498, 2.03168e-16, -2.54618e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_4kyfy")

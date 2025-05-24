@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://oaetkvpfj1vp"]
+[gd_scene load_steps=9 format=3 uid="uid://oaetkvpfj1vp"]
 
 [ext_resource type="Texture2D" uid="uid://1ytd8vnlmgd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_56xro"]
 [ext_resource type="PackedScene" uid="uid://bbni3ss1tocfx" path="res://scences/player/player.tscn" id="1_hkbve"]
+[ext_resource type="PackedScene" uid="uid://dtmyypm08l711" path="res://scences/enemy/enemy.tscn" id="3_xdo6y"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_56xro"]
+vertices = PackedVector3Array(-49.5, -1.59769, -49.5, -49.5, -1.59769, 49.5, 49.5, -1.59769, 49.5, 49.5, -1.59769, -49.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdo6y"]
 albedo_texture = ExtResource("1_56xro")
@@ -17,7 +22,12 @@ sky = SubResource("Sky_56xro")
 
 [node name="Main" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59769, 0)
+navigation_mesh = SubResource("NavigationMesh_56xro")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.59769, 0)
 material_override = SubResource("StandardMaterial3D_xdo6y")
 use_collision = true
 size = Vector3(100, 1, 100)
@@ -30,3 +40,6 @@ environment = SubResource("Environment_xdo6y")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.994962, 0.0135198, 0.0993418, -0.100258, 0.134171, 0.985873, 0, -0.990866, 0.134851, 0, 0, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31221, 1.85741, 3.79466)
