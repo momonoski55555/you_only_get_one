@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7ewgcrt7t3ge"]
+
+[ext_resource type="Script" uid="uid://csi6bpfj8qei0" path="res://node_3d.gd" id="1_a202f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
+
+[sub_resource type="Sky" id="Sky_noarx"]
+sky_material = SubResource("ProceduralSkyMaterial_a202f")
+
+[sub_resource type="Environment" id="Environment_a0tk4"]
+background_mode = 2
+sky = SubResource("Sky_noarx")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_a202f")
+room_types = Array[PackedScene]([null])
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59005, 6.86484)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a0tk4")

@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+
+@onready var ray_cast_3d: RayCast3D = $Gimble/Camera/RayCast3D
 @onready var point: Node3D = $Gimble/Camera/point
 const PLAYER_BULLET = preload("res://scences/player/player_bullet.tscn")
 const SPEED = 5.0
@@ -9,7 +11,7 @@ const JUMP_VELOCITY = 4.5
 
 var bullets: int = 1
 
-func _ready() -> void:	
+func _ready() -> void:
 	clamp(bullets,0,1)
 
 
@@ -20,9 +22,14 @@ func _input(event: InputEvent) -> void:
 			bullets -= 1
 			point.add_child(bullet)
 			bullet.top_level = true
+		else:
+			melee_attack()
 
 func add_bullet() -> void: 
 	bullets += 1
+
+func melee_attack() -> void:
+	print("melee hit")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
