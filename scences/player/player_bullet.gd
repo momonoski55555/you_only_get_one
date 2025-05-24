@@ -7,8 +7,12 @@ func _physics_process(delta: float) -> void:
 	position += transform.basis * Vector3(0,0, -force_magnitude) * delta
 	
 #
-#func _on_area_3d_body_entered(body: Node3D) -> void:
-	#queue_free()
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if Global is globals:
+		Global.add_bullets()
+	
+	
+	queue_free()
 
 
 func _on_timer_timeout() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://oaetkvpfj1vp"]
+[gd_scene load_steps=10 format=3 uid="uid://oaetkvpfj1vp"]
 
 [ext_resource type="Texture2D" uid="uid://1ytd8vnlmgd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_56xro"]
 [ext_resource type="PackedScene" uid="uid://bbni3ss1tocfx" path="res://scences/player/player.tscn" id="1_hkbve"]
+[ext_resource type="Script" uid="uid://p0abmlo1saxo" path="res://scences/player/Gamemaster.gd" id="1_v2bgw"]
 [ext_resource type="PackedScene" uid="uid://dtmyypm08l711" path="res://scences/enemy/enemy.tscn" id="3_xdo6y"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_56xro"]
@@ -21,6 +22,7 @@ background_mode = 2
 sky = SubResource("Sky_56xro")
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_v2bgw")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59769, 0)
