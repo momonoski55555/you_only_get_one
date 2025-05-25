@@ -77,10 +77,10 @@ tracks/1/path = NodePath("Gimble/Camera/spoon:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.266667, 0.5, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.266667, 0.5, 1.53333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.455531, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.455531, 0, 0), Vector3(-0.455531, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_k6waf"]
@@ -129,7 +129,7 @@ script = ExtResource("2_3k8nl")
 transform = Transform3D(-1.56549e-08, -5.67622e-09, -0.0649284, 0, -0.0649284, 5.67622e-09, -0.358142, 2.48116e-16, 2.83811e-09, 0.517, -0.474, -0.584)
 
 [node name="point" type="Node3D" parent="Gimble/Camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.477419, -0.332325, -1.36395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.507236, -0.47523, -1.25)
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="Gimble/Camera"]
 shape = SubResource("SphereShape3D_3k8nl")
@@ -139,7 +139,7 @@ target_position = Vector3(2.08189e-12, 2.08189e-12, -1.325)
 transform = Transform3D(0.534007, 0, 0, 0, 0.534007, 0, 0, 0, 0.534007, -0.502356, 2.38419e-07, -1.02793)
 
 [node name="Cube" type="MeshInstance3D" parent="Gimble/Camera/spoon"]
-transform = Transform3D(0.32399, 0.109622, 0.0087834, -0.0074052, 0.0490111, -0.338536, -0.109724, 0.320382, 0.048783, 0, 0, 0)
+transform = Transform3D(0.32399, 0.109622, 0.0087834, -0.0074052, 0.0490111, -0.338536, -0.109724, 0.320382, 0.048783, 0.000934541, 0.00688303, -0.00352216)
 material_override = SubResource("StandardMaterial3D_k6waf")
 mesh = SubResource("ArrayMesh_r0wde")
 skeleton = NodePath("")

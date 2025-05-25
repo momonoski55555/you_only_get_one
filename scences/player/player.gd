@@ -32,9 +32,12 @@ func add_bullet() -> void:
 	bullets += 1
 	%ammo_count.text = str(bullets)
 
+
 func melee_attack() -> void:
 	print("melee hit")
+	if $AnimationPlayer.current_animation_length < 0
 	var collided = ray_cast_3d.get_collider()
+	$AnimationPlayer.play("melee")
 	if collided:
 		if collided.name == "Enemy":
 			print("het")
