@@ -9,6 +9,7 @@ func _physics_process(delta: float) -> void:
 #
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Enemy":
+		body.queue_free()
 		Global.add_bullets()
 	
 	queue_free()

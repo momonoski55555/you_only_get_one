@@ -26,8 +26,30 @@ environment = SubResource("Environment_xdo6y")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.994962, 0.0135198, 0.0993418, -0.100258, 0.134171, 0.985873, 0, -0.990866, 0.134851, 0, 0, 0)
 
+[node name="Enemy2" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8302, 1.72097, 10.5136)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9842, 1.67127, 0.731503)
+
+[node name="Enemy6" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(-0.0357018, 0, -0.999362, 0, 1, 0, 0.999362, 0, -0.0357018, -88.4617, 2.94342, 51.3567)
+visible = false
+
+[node name="Enemy7" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(-0.0357018, 0, -0.999362, 0, 1, 0, 0.999362, 0, -0.0357018, -78.7161, 2.89372, 52.5515)
+visible = false
+
+[node name="Enemy4" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41.2127, 1.72097, -48.5064)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_xdo6y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.3942, 1.67127, -48.4678)
+
 [node name="Enemy" parent="." instance=ExtResource("3_xdo6y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31221, 1.85741, 3.79466)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Enemy"]
 
 [node name="Map1" parent="." instance=ExtResource("4_v2bgw")]
 transform = Transform3D(1.386, 0, 0, 0, 1.386, 0, 0, 0, 1.386, -2, 0, -3)
