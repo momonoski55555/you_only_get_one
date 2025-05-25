@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="you_only_get_one"
-run/main_scene="uid://oaetkvpfj1vp"
+run/main_scene="uid://i0p7meh745vy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://global.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
 
 [input]
 

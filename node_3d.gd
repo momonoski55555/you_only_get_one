@@ -78,22 +78,35 @@ func find_point(room: Node3D) -> Node3D:
 	
 	
 
-
 func orient_room(room: Node3D):
-	var child_mesh:MeshInstance3D = room.get_child(4).get_child(0)
-	# we get the parent scale and position
-	var parent_pos = room.get_parent().position
-	var parent_scale = room.get_parent().scale 
-	
-	# we calculate the magnitude aka "size" of the former vectors
-	var min_offset = parent_scale.length() * 0.2
-	var base_offset = parent_pos.length() * 0.4
-	# we take the Axis Aligned Bounding box and calculate the magnitude 
-	# of it by the running a theoratical diagonal line thro it 
+	# Ensure room exists and contains the expected child node
+	var child_mesh: MeshInstance3D = room.get_node_or_null("SKIP").get_child(0)
+	#if child_mesh == null or child_mesh.get_child_count() == 0:
+		#push_error("Invalid room structure: Missing SKIP node or child mesh.")
+		#return
+#
+	#child_mesh = child_mesh.get_child(0)
+
+	# Get parent position and scale
+	var parent = room.get_parent()
+	if parent == null:
+		push_error("Room has no valid parent.")
+		return
+
+	var parent_pos = parent.position
+	var parent_scale = parent.scale
+
+	# Calculate offsets with improved readability
+	var min_offset = parent_scale.length() * 0.1
+	var base_offset = parent_pos.length() * 0.6
+
+	# Compute magnitude from the AABB size
 	var mesh_AABB: AABB = child_mesh.get_aabb()
-	var AABB_magnitude = -mesh_AABB.size.length()
+	var AABB_magnitude = mesh_AABB.size.length()  # Removed the incorrect negative sign
+
+	# Ensure offset stays within safe bounds
 	var offset = clamp(base_offset, min_offset, AABB_magnitude)
-	
-	var displasment = room.basis.z * offset 
-	
-	room.position += displasment
+
+	# Compute displacement correctly
+	var displacement = room.basis.z * offset
+	room.position += displacement

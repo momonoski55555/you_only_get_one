@@ -8,7 +8,14 @@ extends CharacterBody3D
 var bullet:int = 1
 var player: Player
 
+var s: float
+
 func _physics_process(delta: float) -> void:
+	s += 10.0
+	
+	%saw.rotate_object_local(Vector3(0,1,0),deg_to_rad(s))
+	
+	
 	if player:
 		look_at.look_at(player.position)
 		gimble.rotation.y = lerp(gimble.rotation.y , look_at.rotation.y, 3 * delta)

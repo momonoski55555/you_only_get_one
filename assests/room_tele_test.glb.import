@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs432tfejquxa"
-path="res://.godot/imported/enemy_model.glb-ed97b52e00a27ee1ee65222ada46670c.scn"
+uid="uid://by5m12pypqmku"
+path="res://.godot/imported/room_tele_test.glb-33e8724da4ff27718f0334df470da1b7.scn"
 
 [deps]
 
-source_file="res://assests/enemy_model.glb"
-dest_files=["res://.godot/imported/enemy_model.glb-ed97b52e00a27ee1ee65222ada46670c.scn"]
+source_file="res://assests/room_tele_test.glb"
+dest_files=["res://.godot/imported/room_tele_test.glb-33e8724da4ff27718f0334df470da1b7.scn"]
 
 [params]
 
