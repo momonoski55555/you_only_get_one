@@ -21,12 +21,13 @@ func _input(event: InputEvent) -> void:
 	var bullet = PLAYER_BULLET.instantiate()
 	if Input.is_action_just_released("Fire"):
 		if bullets > 0:
-			#bullets -= 1
-			#point.add_child(bullet)
-			#bullet.top_level = true
-			#%ammo_count.text = str(bullets)
-		#else:
-			melee_attack()
+			bullets -= 1
+			point.add_child(bullet)
+			bullet.top_level = true
+			%ammo_count.text = str(bullets)
+		else:
+			if not $AnimationPlayer.is_playing():
+				melee_attack()
 
 func add_bullet() -> void: 
 	bullets += 1
@@ -35,7 +36,7 @@ func add_bullet() -> void:
 
 func melee_attack() -> void:
 	print("melee hit")
-	if $AnimationPlayer.current_animation_length < 0
+
 	var collided = ray_cast_3d.get_collider()
 	$AnimationPlayer.play("melee")
 	if collided:
