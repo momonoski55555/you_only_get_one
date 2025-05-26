@@ -357,10 +357,6 @@ skeleton = NodePath("")
 target_position = Vector3(2.08189e-12, 2.08189e-12, -10)
 debug_shape_custom_color = Color(0, 0.849889, 0.849889, 1)
 
-[node name="point" type="Node3D" parent="Gimble"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.98684)
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -399,7 +395,5 @@ transform = Transform3D(1.33979, 0, 0, 0, 1.15903, 0, 0, 0, 1, 0.0537512, -9.536
 visible = false
 mesh = SubResource("ArrayMesh_bw78c")
 skeleton = NodePath("")
-
-[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

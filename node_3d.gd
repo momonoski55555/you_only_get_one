@@ -106,7 +106,10 @@ func orient_room(room: Node3D):
 
 	# Ensure offset stays within safe bounds
 	var offset = clamp(base_offset, min_offset, AABB_magnitude)
-
+	
+##	
+#@onready var point: Node3D = $"../point"
+#@export var start_position: Vector3 = point.position
 	# Compute displacement correctly
 	var displacement = room.basis.z * offset
 	room.position += displacement
