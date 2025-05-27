@@ -9,7 +9,8 @@ class_name Player
 const PLAYER_BULLET = preload("res://scences/player/player_bullet.tscn")
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
+@onready var marker_3d: Marker3D = $Marker3D
+var dir_xy
 
 var bullets: int = 1
 
@@ -21,12 +22,15 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	var bullet = PLAYER_BULLET.instantiate()
+	if Input.is_action_just_released("shift"):
+		dash(dir_xy)
+	
 	if Input.is_action_just_released("Fire"):
 		if bullets > 0:
 			bullets -= 1
 			#point.add_child(bullet)
 			#bullet.top_level = true
-			var colideed = ray_cast_3d_2.get_collider()
+			var colideed = ray_cast_3d_2
 			if colideed:
 				if colideed.name == "Enemy":
 					colideed.queue_free()
@@ -48,8 +52,16 @@ func add_bullet() -> void:
 	%ammo_count.text = str(bullets)
 
 
+func dash(dir: Vector3) -> void:
+	
+	position += dir
+	
+	
+
 func melee_attack() -> void:
 	print("melee hit")
+	
+
 
 	var collided = ray_cast_3d.get_collider()
 	$AnimationPlayer.play("melee")
@@ -68,6 +80,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		var input_dir := Input.get_vector("A", "D", "W", "S")
 		var direction: Vector3 = ($Gimble.transform.basis * Vector3(input_dir.x, velocity.y, input_dir.y)).normalized()
+		dir_xy = Vector3(direction.x, position.y, direction.z) * 3
+
+		
 		if direction:
 			velocity = direction * SPEED
 		else:

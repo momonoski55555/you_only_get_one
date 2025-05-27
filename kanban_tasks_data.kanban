@@ -11,12 +11,11 @@
 			"uuid": "be9682ab-b257-4bcd-869f-7fa7a90905d8",
 			"title": "Todo",
 			"tasks": [
-				"5977c658-9d24-4358-ae3e-a2e2f0e21951",
-				"d34e0dc5-1f73-44d6-8f83-00265db97e29",
 				"90f6bceb-2049-4402-900b-7786de17e0f5",
 				"19c4e2cb-23f3-403b-82a9-7d26f9d7dc46",
 				"349d5df5-63b2-427e-b0d3-154c1c16a3bf",
-				"60074632-7d5d-4acc-8e97-ab89e7ebd5bf"
+				"60074632-7d5d-4acc-8e97-ab89e7ebd5bf",
+				"1cc57088-9860-464d-a721-4e07e70aaf49"
 			]
 		},
 		{
@@ -36,20 +35,6 @@
 		{
 			"uuid": "a58d8be4-3514-4fa4-821e-64944071a4aa",
 			"title": "get a menu working",
-			"description": "",
-			"category": "e5057c0e-7472-4224-8580-aa8ddec8f1e6",
-			"steps": []
-		},
-		{
-			"uuid": "5977c658-9d24-4358-ae3e-a2e2f0e21951",
-			"title": "level transition",
-			"description": "",
-			"category": "e5057c0e-7472-4224-8580-aa8ddec8f1e6",
-			"steps": []
-		},
-		{
-			"uuid": "d34e0dc5-1f73-44d6-8f83-00265db97e29",
-			"title": "2 more maps",
 			"description": "",
 			"category": "e5057c0e-7472-4224-8580-aa8ddec8f1e6",
 			"steps": []
@@ -78,6 +63,13 @@
 		{
 			"uuid": "60074632-7d5d-4acc-8e97-ab89e7ebd5bf",
 			"title": "make a pause menu",
+			"description": "",
+			"category": "e5057c0e-7472-4224-8580-aa8ddec8f1e6",
+			"steps": []
+		},
+		{
+			"uuid": "1cc57088-9860-464d-a721-4e07e70aaf49",
+			"title": "New task",
 			"description": "",
 			"category": "e5057c0e-7472-4224-8580-aa8ddec8f1e6",
 			"steps": []

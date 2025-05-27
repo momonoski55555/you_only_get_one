@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bbni3ss1tocfx"]
+[gd_scene load_steps=20 format=4 uid="uid://bbni3ss1tocfx"]
 
 [ext_resource type="Script" uid="uid://gbvuoal04u40" path="res://scences/player/player.gd" id="1_i0nm0"]
 [ext_resource type="Script" uid="uid://b2xdjgjra08yb" path="res://scences/player/gimble.gd" id="2_3k8nl"]
@@ -124,6 +124,8 @@ _data = {
 &"melee": SubResource("Animation_637lg")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_hut74"]
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_i0nm0")
 
@@ -214,3 +216,8 @@ stream = ExtResource("6_hut74")
 
 [node name="PowerUp" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_hut74")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Marker3D"]
+mesh = SubResource("BoxMesh_hut74")
