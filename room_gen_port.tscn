@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1f68ifleb82g"]
-
-[ext_resource type="Script" uid="uid://clkqlkbdfvyhc" path="res://scripts/roomgen.gd" id="1_vojtv"]
-
-[node name="roomgen" type="Node"]
-script = ExtResource("1_vojtv")
